@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ayini-foods/static/css/main.fd073f93.css",
-    "main.js": "/ayini-foods/static/js/main.cbc67367.js",
+    "main.js": "/ayini-foods/static/js/main.855e61ce.js",
     "index.html": "/ayini-foods/index.html",
     "main.fd073f93.css.map": "/ayini-foods/static/css/main.fd073f93.css.map",
-    "main.cbc67367.js.map": "/ayini-foods/static/js/main.cbc67367.js.map"
+    "main.855e61ce.js.map": "/ayini-foods/static/js/main.855e61ce.js.map"
   },
   "entrypoints": [
     "static/css/main.fd073f93.css",
-    "static/js/main.cbc67367.js"
+    "static/js/main.855e61ce.js"
   ]
 }
