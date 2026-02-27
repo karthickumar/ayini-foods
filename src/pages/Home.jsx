@@ -56,11 +56,11 @@ const Home = () => {
           <h3>Premium Quality</h3>
           <p>Best ingredients</p>
         </div>
-        {/* <div className="feature">
+        <div className="feature">
           <span className="feature-icon">💬</span>
           <h3>24/7 Support</h3>
           <p>Always here to help</p>
-        </div> */}
+        </div>
       </section>
 
       {/* Categories Section */}
