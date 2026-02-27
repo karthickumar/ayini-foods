@@ -19,7 +19,7 @@ import './App.scss';
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename="/ayini-foods">
         <div className="app">
           <Header />
           <main className="main-content">
