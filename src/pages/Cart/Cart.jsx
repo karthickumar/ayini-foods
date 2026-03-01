@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../components/Breadcrumb';
-import { useCart } from '../context/CartContext';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import { useCart } from '../../context/CartContext';
+
+import './Cart.scss';
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();

@@ -3,15 +3,15 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 
 // Components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 // Pages
-import Home from './pages/Home';
-import Products from './pages/Products';
-import ProductDetail from './pages/ProductDetail';
-import MyAccount from './pages/MyAccount';
-import Cart from './pages/Cart';
+import Home from './pages/Home/Home';
+import Products from './pages/Products/Products';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+import MyAccount from './pages/MyAccount/MyAccount';
+import Cart from './pages/Cart/Cart';
 
 // Styles
 import './App.scss';

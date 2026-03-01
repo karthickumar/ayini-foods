@@ -1,0 +1,194 @@
+@use "../../styles/base" as *;
+
+// ========================================
+// HEADER
+// ========================================
+.header {
+  background: $white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    @include flex-between;
+    gap: 20px;
+
+    @include tablet {
+      padding: 12px 15px;
+    }
+  }
+
+  // Brand Logo
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .logo-icon {
+      font-size: 2.5rem;
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+
+      .brand-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 1.2;
+
+        @include mobile {
+          font-size: 1.2rem;
+        }
+      }
+
+      .brand-tagline {
+        font-size: 0.75rem;
+        color: $text-muted;
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Navigation Menu
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include tablet {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: $white;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 80px 30px 30px;
+      gap: 0;
+      box-shadow: $shadow-lg;
+      transition: right $transition;
+      z-index: 999;
+
+      &.mobile-open {
+        right: 0;
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      color: $text-color;
+      padding: 8px 0;
+      position: relative;
+
+      @include tablet {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid $light-gray;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $primary-color;
+        transition: width $transition;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &:hover, &.active {
+        color: $primary-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      .nav-icon {
+        font-size: 1.2rem;
+
+        @include tablet {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  // Header Actions
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .cart-link {
+      position: relative;
+      font-size: 1.5rem;
+
+      .cart-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: $primary-color;
+        color: $white;
+        font-size: 0.7rem;
+        font-weight: 600;
+        min-width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        @include flex-center;
+      }
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      padding: 5px;
+
+      @include tablet {
+        display: block;
+      }
+
+      .menu-icon {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // Mobile Overlay
+  .mobile-overlay {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+  }
+}

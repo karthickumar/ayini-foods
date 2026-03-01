@@ -1,0 +1,38 @@
+@use "../../styles/base" as *;
+// ========================================
+// BREADCRUMB
+// ========================================
+.breadcrumb {
+  padding: 15px 0;
+  margin-bottom: 20px;
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb-link {
+    color: $primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-separator {
+    color: $text-muted;
+  }
+
+  .breadcrumb-current {
+    color: $text-muted;
+  }
+}

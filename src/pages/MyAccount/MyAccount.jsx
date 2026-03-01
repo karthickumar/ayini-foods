@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../components/Breadcrumb';
-import { useCart } from '../context/CartContext';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import { useCart } from '../../context/CartContext';
+
+import './MyAccount.scss';
 
 const MyAccount = () => {
   const [activeTab, setActiveTab] = useState('profile');

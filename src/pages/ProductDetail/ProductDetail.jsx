@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Breadcrumb from '../components/Breadcrumb';
-import ProductCard from '../components/ProductCard';
-import { useCart } from '../context/CartContext';
-import { products } from '../data/products';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { useCart } from '../../context/CartContext';
+import { products } from '../../data/products';
+
+import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,6 +15,10 @@ const ProductDetail = () => {
   const [addedToCart, setAddedToCart] = useState(false);
 
   const product = products.find(p => p.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id])
 
   if (!product) {
     return (

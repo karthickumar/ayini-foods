@@ -1,0 +1,144 @@
+@use "../../styles/base" as *;
+
+// ========================================
+// FOOTER
+// ========================================
+.footer {
+  background: $dark-color;
+  color: $white;
+  margin-top: auto;
+
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+  }
+
+  .footer-section {
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      .logo-icon {
+        font-size: 2rem;
+      }
+
+      .brand-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+
+    .footer-description {
+      color: rgba($white, 0.7);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+
+      .social-link {
+        font-size: 1.5rem;
+        transition: transform $transition-fast;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: $secondary-color;
+  }
+
+  .footer-links {
+    li {
+      margin-bottom: 12px;
+
+      a {
+        color: rgba($white, 0.7);
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    p {
+      color: rgba($white, 0.7);
+      margin-bottom: 10px;
+    }
+  }
+
+  .business-hours {
+    margin-top: 20px;
+
+    p {
+      color: rgba($white, 0.7);
+      margin-bottom: 5px;
+
+      strong {
+        color: $white;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($white, 0.1);
+
+    .footer-bottom-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      @include flex-between;
+
+      @include mobile {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+    }
+
+    p {
+      color: rgba($white, 0.5);
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 25px;
+
+      a {
+        color: rgba($white, 0.5);
+        font-size: 0.9rem;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}

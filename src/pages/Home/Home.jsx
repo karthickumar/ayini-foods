@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
-import { products, categories } from '../data/products';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { products, categories } from '../../data/products';
+
+import './Home.scss';
 
 const Home = () => {
   const featuredProducts = products.filter(p => p.rating >= 4.5).slice(0, 4);

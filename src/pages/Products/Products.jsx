@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
-import Breadcrumb from '../components/Breadcrumb';
-import { products, categories } from '../data/products';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import { products, categories } from '../../data/products';
+
+import './Products.scss';
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
