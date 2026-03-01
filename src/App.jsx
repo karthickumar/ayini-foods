@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 
 // Components
@@ -19,7 +19,7 @@ import './App.scss';
 function App() {
   return (
     <CartProvider>
-      <Router basename="/ayini-foods">
+      <Router>
         <div className="app">
           <Header />
           <main className="main-content">

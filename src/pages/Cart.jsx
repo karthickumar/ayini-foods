@@ -6,6 +6,9 @@ import { useCart } from '../context/CartContext';
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
 
+  // WhatsApp Business Number (Replace with your actual number)
+  const WHATSAPP_NUMBER = '+917338772008'; // Format: country code + number (no + or spaces)
+
   const breadcrumbItems = [
     { label: 'Home', path: '/' },
     { label: 'Shopping Cart' }
@@ -13,6 +16,35 @@ const Cart = () => {
 
   const deliveryCharge = cartTotal >= 499 ? 0 : 40;
   const finalTotal = cartTotal + deliveryCharge;
+
+  // Generate WhatsApp message with order details
+  const generateWhatsAppMessage = () => {
+    let message = `🛒 *New Order from Ayini Foods*\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `*Order Details:*\n\n`;
+
+    cart.forEach((item, index) => {
+      message += `${index + 1}. *${item.name}*\n`;
+      message += ` Qty: ${item.quantity} × ₹${item.price} = ₹${item.quantity * item.price}\n`;
+      message += ` Weight: ${item.weight}\n\n`;
+    });
+
+    message += `━━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `*Subtotal:* ₹${cartTotal}\n`;
+    message += `*Delivery:* ${deliveryCharge === 0 ? 'FREE' : '₹' + deliveryCharge}\n`;
+    message += `*Total Amount:* ₹${finalTotal}\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `Please confirm my order. 🙏`;
+
+    return encodeURIComponent(message);
+  };
+
+  // Handle WhatsApp checkout
+  const handleWhatsAppCheckout = () => {
+    const message = generateWhatsAppMessage();
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    window.open(whatsappURL, '_blank');
+  };
 
   if (cart.length === 0) {
     return (
@@ -116,8 +148,11 @@ const Cart = () => {
             <span>₹{finalTotal}</span>
           </div>
 
-          <button className="checkout-btn btn btn-primary">
-            Proceed to Checkout
+          <button
+            className="checkout-btn btn btn-whatsapp"
+            onClick={handleWhatsAppCheckout}
+          >
+            💬 Order via WhatsApp
           </button>
 
           <Link to="/products" className="continue-shopping">

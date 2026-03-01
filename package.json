@@ -2,7 +2,7 @@
   "name": "ayini-foods",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://karthickumar.github.io/ayini-foods",
+  "homepage": "https://karthickumar.github.io",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
